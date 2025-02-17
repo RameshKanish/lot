@@ -1,2 +1,3 @@
-package PACKAGE_NAME;public enum CarType {
+public enum CarType {
+    SUV , HATCHBACK
 }

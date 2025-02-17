@@ -1,15 +1,22 @@
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+    public static void main(String[] args) throws Exception {
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        ParkingLot parkingLot = new ParkingLot(2 ,1 , 1);
+
+        Car car1 = CarFactory.getInstance(CarType.SUV, 10);
+        Car car2 = CarFactory.getInstance(CarType.HATCHBACK, 11);
+        Car car3 = CarFactory.getInstance(CarType.HATCHBACK, 13);
+
+        parkingLot.parkCars(car1);
+        parkingLot.parkCars(car2);
+
+
+        parkingLot.releaseCar(car1 , 12);
+
+        parkingLot.parkCars(car3);
+
+        parkingLot.printCars();
     }
 }
